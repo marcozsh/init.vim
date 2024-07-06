@@ -21,7 +21,7 @@ iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
 
 ```
 
-2. Go to `C:\Users\Maily\AppData\Local\nvim` , if not exist, create it
+2. Go to `C:\Users\YOURUSER\AppData\Local\nvim` , if not exist, create it
 3. Create `init.vim` (You can copy mine `https://github.com/marcozsh/init.vim.git`)
 4. Make te config
 5. Open vim and install the plugins `:PlugInstall`
