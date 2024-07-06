@@ -92,6 +92,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeDirArrows=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeQuitOnOpen=0
+let g:NERDTreeWinPos = "right"
 
 
 "Keys Maps
