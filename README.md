@@ -1,3 +1,6 @@
+
+# Install Neo Vim on Windows
+
 1. install scoop 
 ``` PowerShell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
