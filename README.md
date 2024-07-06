@@ -32,6 +32,7 @@ iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
 `Optionals`
 7. To install prettier with Coc `:CocInstall coc-prettier`
 8. To install tailwind lint with Coc `:CocInstall @yaegassy/coc-tailwindcss3`
+9. To install react/nextjs snippet with Coc `:CocInstall https://github.com/buidler-hub/react-nextjs-snippets@main`
 
 #### Note: For linters it needs Node
 
