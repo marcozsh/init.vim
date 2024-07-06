@@ -29,6 +29,7 @@ iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
 4. Make the config
 5. Open vim and install the plugins `:PlugInstall`
 6. Then Update Coc `:CocUpdate`
+7. To install prettier with Coc `:CocInstall coc-prettier`
 
 #### Note: For linters it needs Node
 

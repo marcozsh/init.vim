@@ -34,9 +34,10 @@ Plug 'vim-syntastic/syntastic'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'easymotion/vim-easymotion' 
 Plug 'windwp/nvim-autopairs'
-"Plug 'eslint/eslinbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'https://github.com/windwp/nvim-ts-autotag'
 
 "jinga syntax (flask, django)
 Plug 'glench/vim-jinja2-syntax'
@@ -111,6 +112,9 @@ nnoremap <silent> ba  :bprevious<cr>
 nnoremap <silent> bb :bnext<cr>
 nnoremap <silent> cb :bd<cr>
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+"prettier
+nnoremap <Leader>py :silent %!prettier --stdin-filepath %<CR>
+
 "End Keys Maps
 
 
@@ -151,6 +155,4 @@ endfunction
 autocmd VimEnter * call AccentDemo()
 
 "End airline setup
-
-
 
