@@ -14,7 +14,6 @@ set relativenumber
 
 autocmd VimEnter * syntax on
 
-colorscheme zaibatsu
 
 call plug#begin()
 
@@ -23,6 +22,7 @@ call plug#begin()
 "colorschemes
 Plug 'sainnhe/sonokai'
 Plug 'morhetz/gruvbox'
+Plug 'navarasu/onedark.nvim'
 
 "fonts
 Plug 'powerline/fonts'
@@ -38,7 +38,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'https://github.com/windwp/nvim-ts-autotag'
-
+Plug 'ryanoasis/vim-devicons'
 "jinga syntax (flask, django)
 Plug 'glench/vim-jinja2-syntax'
 
@@ -68,7 +68,17 @@ Plug 'frazrepo/vim-rainbow'
 
 call plug#end()
 
-
+let g:onedark_config = {
+  \ 'style': 'darker',
+  \ 'toggle_style_key': '<leader>ts',
+  \ 'ending_tildes': v:true,
+  \ 'transparent':v:true,
+  \ 'diagnostics': {
+    \ 'darker': v:false,
+    \ 'background': v:false,
+  \ },
+\ }
+colorscheme onedark
 "Rainbow Parentheses Improved configuration
 
 let g:rainbow_active = 1
