@@ -78,7 +78,7 @@ let g:onedark_config = {
     \ 'background': v:false,
   \ },
 \ }
-colorscheme onedark
+colorscheme vim
 "Rainbow Parentheses Improved configuration
 
 let g:rainbow_active = 1
@@ -101,14 +101,14 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeDirArrows=1
 let NERDTreeShowLineNumbers=1
-let NERDTreeQuitOnOpen=0
+let NERDTreeQuitOnOpen=1
 let g:NERDTreeWinPos = "right"
 
 
 "Keys Maps
 
 let mapleader=" " 
-nmap <Leader>nt :NERDTreeFind<CR>
+nmap <Leader>nt :NERDTreeToggle<CR>
 "nmap <silent> ga <Plug>(coc-codeaction-line)
 "nmap <silent> gd <Plug>(coc-definition)
 "nmap <silent> gy <Plug>(coc-type-definition)
