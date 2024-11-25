@@ -50,4 +50,18 @@ pip install jedi-language-server
 npm install -g live-server
 ```
 
+### Add Lazy Git for git Workflow
+
+1. Add extras
+
+```PowerShell
+scoop bucket add extras
+```
+2. install lazygit
+
+```
+scoop install lazygit
+```
+
+
 And there you go. Enjoy Nvim
