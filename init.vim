@@ -23,6 +23,8 @@ call plug#begin()
 Plug 'sainnhe/sonokai'
 Plug 'morhetz/gruvbox'
 Plug 'navarasu/onedark.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'daltonmenezes/aura-theme', { 'rtp': 'packages/neovim' }
 
 "fonts
 Plug 'powerline/fonts'
@@ -41,6 +43,8 @@ Plug 'https://github.com/windwp/nvim-ts-autotag'
 Plug 'ryanoasis/vim-devicons'
 "jinga syntax (flask, django)
 Plug 'glench/vim-jinja2-syntax'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 
 
 "html
@@ -55,6 +59,7 @@ Plug 'yuezk/vim-js'
 
 "git
 Plug 'tpope/vim-fugitive'
+Plug 'kdheepak/lazygit.nvim'
 
 "typing
 Plug 'jiangmiao/auto-pairs'
@@ -78,7 +83,7 @@ let g:onedark_config = {
     \ 'background': v:false,
   \ },
 \ }
-colorscheme vim
+colorscheme gruvbox
 "Rainbow Parentheses Improved configuration
 
 let g:rainbow_active = 1
@@ -126,6 +131,11 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 "prettier
 nnoremap <Leader>py :silent %!prettier --stdin-filepath %<CR>
 
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>lg <cmd>LazyGit<cr>
 "End Keys Maps
 
 
