@@ -83,7 +83,7 @@ let g:onedark_config = {
     \ 'background': v:false,
   \ },
 \ }
-colorscheme gruvbox
+colorscheme retrobox
 "Rainbow Parentheses Improved configuration
 
 let g:rainbow_active = 1

@@ -63,5 +63,18 @@ scoop bucket add extras
 scoop install lazygit
 ```
 
+### In case Live Grep(telescope) is not working properly
+
+1. Install ripgrep
+
+``` PowerShell
+winget install BurntSushi.ripgrep.MSVC
+```
+o también
+
+``` PowerShell
+scoop install ripgrep
+
+```
 
 And there you go. Enjoy Nvim
