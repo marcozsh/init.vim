@@ -25,6 +25,8 @@ Plug 'morhetz/gruvbox'
 Plug 'navarasu/onedark.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'daltonmenezes/aura-theme', { 'rtp': 'packages/neovim' }
+Plug 'Tsuzat/NeoSolarized.nvim', { 'branch': 'master' }
+Plug 'zootedb0t/citruszest.nvim'
 
 "fonts
 Plug 'powerline/fonts'
@@ -73,17 +75,8 @@ Plug 'frazrepo/vim-rainbow'
 
 call plug#end()
 
-let g:onedark_config = {
-  \ 'style': 'darker',
-  \ 'toggle_style_key': '<leader>ts',
-  \ 'ending_tildes': v:true,
-  \ 'transparent':v:true,
-  \ 'diagnostics': {
-    \ 'darker': v:false,
-    \ 'background': v:false,
-  \ },
-\ }
-colorscheme retrobox
+colorscheme citruszest
+
 "Rainbow Parentheses Improved configuration
 
 let g:rainbow_active = 1
@@ -106,7 +99,7 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeDirArrows=1
 let NERDTreeShowLineNumbers=1
-let NERDTreeQuitOnOpen=1
+"let NERDTreeQuitOnOpen=1
 let g:NERDTreeWinPos = "right"
 
 
