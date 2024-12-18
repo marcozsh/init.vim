@@ -62,6 +62,7 @@ Plug 'yuezk/vim-js'
 "git
 Plug 'tpope/vim-fugitive'
 Plug 'kdheepak/lazygit.nvim'
+Plug 'github/copilot.vim'
 
 "typing
 Plug 'jiangmiao/auto-pairs'
@@ -79,7 +80,7 @@ colorscheme citruszest
 
 "Rainbow Parentheses Improved configuration
 
-let g:rainbow_active = 1
+let g:rainbow_active=1
 
 let g:rainbow_load_separately = [
     \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
