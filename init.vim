@@ -93,11 +93,11 @@ let g:NERDTreeWinPos = "right"
 
 let mapleader=" " 
 nmap <Leader>nt :NERDTreeToggle<CR>
-"nmap <silent> ga <Plug>(coc-codeaction-line)
-"nmap <silent> gd <Plug>(coc-definition)
-"nmap <silent> gy <Plug>(coc-type-definition)
-"nmap <silent> gi <Plug>(coc-implementation)
-"nmap <silent> gr <Plug>(coc-references)
+nmap <Leader>ga <Plug>(coc-codeaction-line)
+nmap <Leader>gd <Plug>(coc-definition)
+nmap <Leader>gy <Plug>(coc-type-definition)
+nmap <Leader>gi <Plug>(coc-implementation)
+nmap <Leader>gr <Plug>(coc-references)
 "nmap <Leader>w :w <CR>
 "nmap <Leader>q :q <CR>
 "nmap <Leader>pl :PlugInstall<CR>
