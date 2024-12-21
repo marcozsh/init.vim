@@ -70,11 +70,21 @@ scoop install lazygit
 ``` PowerShell
 winget install BurntSushi.ripgrep.MSVC
 ```
-o también
+or
 
 ``` PowerShell
 scoop install ripgrep
 
 ```
+
+### nvim-treesitter
+
+It needs gcc to work
+
+```
+scoop install gcc
+```
+Then :TSInstall language
+
 
 And there you go. Enjoy Nvim

@@ -27,6 +27,7 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'daltonmenezes/aura-theme', { 'rtp': 'packages/neovim' }
 Plug 'Tsuzat/NeoSolarized.nvim', { 'branch': 'master' }
 Plug 'zootedb0t/citruszest.nvim'
+Plug 'rose-pine/neovim', { 'branch': 'main' }
 
 "fonts
 Plug 'powerline/fonts'
@@ -47,6 +48,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'glench/vim-jinja2-syntax'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'HiPhish/rainbow-delimiters.nvim'
 
 
 "html
@@ -66,31 +69,13 @@ Plug 'github/copilot.vim'
 
 "typing
 Plug 'jiangmiao/auto-pairs'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 "commentFunction
 Plug 'scrooloose/nerdcommenter'
 
-"Rainbow Parentheses Improved
-
-Plug 'frazrepo/vim-rainbow'
-
 call plug#end()
 
-colorscheme citruszest
-
-"Rainbow Parentheses Improved configuration
-
-let g:rainbow_active=1
-
-let g:rainbow_load_separately = [
-    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
-    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
-    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
-    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
-    \ ]
-
-let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
-let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
 
 "nerdtree
@@ -170,4 +155,129 @@ endfunction
 autocmd VimEnter * call AccentDemo()
 
 "End airline setup
+
+
+lua << EOF
+require("rose-pine").setup({
+    variant = "auto", -- auto, main, moon, or dawn
+    dark_variant = "main", -- main, moon, or dawn
+    dim_inactive_windows = false,
+    extend_background_behind_borders = true,
+
+    enable = {
+        terminal = true,
+        legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+        migrations = true, -- Handle deprecated options automatically
+    },
+
+    styles = {
+        bold = false,
+        italic = false,
+        transparency = false,
+    },
+
+    groups = {
+        border = "muted",
+        link = "iris",
+        panel = "surface",
+
+        error = "love",
+        hint = "iris",
+        info = "foam",
+        note = "pine",
+        todo = "rose",
+        warn = "gold",
+
+        git_add = "foam",
+        git_change = "rose",
+        git_delete = "love",
+        git_dirty = "rose",
+        git_ignore = "muted",
+        git_merge = "iris",
+        git_rename = "pine",
+        git_stage = "iris",
+        git_text = "rose",
+        git_untracked = "subtle",
+
+        h1 = "iris",
+        h2 = "foam",
+        h3 = "rose",
+        h4 = "gold",
+        h5 = "pine",
+        h6 = "foam",
+    },
+})
+
+local highlight = {
+    "RainbowRed",
+    "RainbowYellow",
+    "RainbowBlue",
+    "RainbowOrange",
+    "RainbowGreen",
+    "RainbowViolet",
+    "RainbowCyan",
+}
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "typescript", "tsx"},
+
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+    disable = function(lang, buf)
+        local max_filesize = 100 * 1024 -- 100 KB
+        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+        if ok and stats and stats.size > max_filesize then
+            return true
+        end
+    end,
+    additional_vim_regex_highlighting = false,
+  },
+
+}
+
+local rainbow_delimiters = require "rainbow-delimiters"
+
+local hooks = require "ibl.hooks"
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+    vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+    vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+    vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+    vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+    vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+    vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+end)
+
+
+require("ibl").setup { indent = { highlight = highlight } }
+
+vim.cmd("colorscheme rose-pine-moon")
+EOF
+let g:rainbow_delimiters = {
+    \ 'strategy': {
+        \ '': rainbow_delimiters#strategy.global,
+        \ 'vim': rainbow_delimiters#strategy.local,
+    \ },
+    \ 'query': {
+        \ '': 'rainbow-delimiters',
+        \ 'lua': 'rainbow-blocks',
+    \ },
+    \ 'priority': {
+        \ '': 110,
+        \ 'lua': 210,
+    \ },
+    \ 'highlight': [
+        \ 'RainbowDelimiterRed',
+        \ 'RainbowDelimiterYellow',
+        \ 'RainbowDelimiterBlue',
+        \ 'RainbowDelimiterOrange',
+        \ 'RainbowDelimiterGreen',
+        \ 'RainbowDelimiterViolet',
+        \ 'RainbowDelimiterCyan',
+    \ ],
+\ }
+
+
 
