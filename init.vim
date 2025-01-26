@@ -11,6 +11,7 @@ set noshowmode
 set smartindent
 set nowrap
 set relativenumber
+set colorcolumn=100
 
 autocmd VimEnter * syntax on
 
@@ -85,8 +86,14 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeDirArrows=1
 let NERDTreeShowLineNumbers=1
-"let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=1
 let g:NERDTreeWinPos = "right"
+" let g:NERDTreeHighlightFolders = 1
+let g:NERDTreeHighlightFoldersFullName = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1 " enable folder glyph flag
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:DevIconsEnableFolderExtensionPatternMatching = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
 
 
 "Keys Maps
@@ -108,7 +115,9 @@ nnoremap <silent> bb :bnext<cr>
 nnoremap <silent> cb :bd<cr>
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 "prettier
-nnoremap <Leader>py :silent %!prettier --stdin-filepath %<CR>
+"nnoremap <Leader>py :silent %!prettier --stdin-filepath %<CR>
+"nnoremap <Leader>py :let save_pos = getpos(".")<CR>:silent %!prettier --stdin-filepath %<CR>:call setpos(".", save_pos)<CR>
+nnoremap <Leader>py :let save_pos = getpos(".")<CR>:silent %!prettier --stdin-filepath %<CR>:call setpos(".", save_pos)<CR>zz
 
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -159,8 +168,8 @@ autocmd VimEnter * call AccentDemo()
 
 lua << EOF
 require("rose-pine").setup({
-    variant = "auto", -- auto, main, moon, or dawn
-    dark_variant = "main", -- main, moon, or dawn
+    variant = "moon", -- auto, main, moon, or dawn
+    dark_variant = "moon", -- main, moon, or dawn
     dim_inactive_windows = false,
     extend_background_behind_borders = true,
 
@@ -253,7 +262,7 @@ end)
 
 require("ibl").setup { indent = { highlight = highlight } }
 
-vim.cmd("colorscheme rose-pine-moon")
+vim.cmd("colorscheme gruvbox")
 EOF
 let g:rainbow_delimiters = {
     \ 'strategy': {
