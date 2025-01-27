@@ -86,5 +86,9 @@ scoop install gcc
 ```
 Then :TSInstall language
 
+### for go to definition error
+```
+:CocInstall coc-json coc-tsserver
+```
 
 And there you go. Enjoy Nvim
