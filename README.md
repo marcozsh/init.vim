@@ -30,7 +30,7 @@ iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
 5. Open vim and install the plugins `:PlugInstall`
 6. Then Update Coc `:CocUpdate`
 `Optionals`
-7. To install prettier with Coc `:CocInstall coc-prettier`
+7. To install prettier with Coc `:CocInstall coc-prettier` if not work install with node `npm install -g prettier`
 8. To install tailwind lint with Coc `:CocInstall @yaegassy/coc-tailwindcss3`
 9. To install react/nextjs snippet with Coc `:CocInstall https://github.com/buidler-hub/react-nextjs-snippets@main`
 
