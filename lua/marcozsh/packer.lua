@@ -74,6 +74,6 @@ return require('packer').startup(function(use)
 
 	use {'mattn/emmet-vim'}
 	use {'windwp/nvim-ts-autotag'}
-
+	use {'nvim-treesitter/nvim-treesitter-context'}
 
 end)
