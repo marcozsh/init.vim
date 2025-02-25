@@ -14,10 +14,6 @@ return require('packer').startup(function(use)
 
 	use({
 		'stankovictab/mgz.nvim',
-		as = 'mgz',
-		config = function()
-			vim.cmd('colorscheme mgz')
-		end
 	})
 
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -73,6 +69,8 @@ return require('packer').startup(function(use)
 			-- tu configuración aquí
 		end
 	}
+	use {'ap/vim-css-color'}
+	use { "scottmckendry/cyberdream.nvim"}
 
 
 

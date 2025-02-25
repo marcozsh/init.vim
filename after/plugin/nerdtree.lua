@@ -14,7 +14,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 vim.g.NERDTreeWinSize = 100
-vim.g.NERDTreeMinimalMenu=1
 
 -- Configuración de NERDTree
 vim.g.NERDTreeDirArrowExpandable = '▸'

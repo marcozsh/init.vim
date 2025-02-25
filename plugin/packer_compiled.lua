@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Maily\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["cyberdream.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Maily\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cyberdream.nvim",
+    url = "https://github.com/scottmckendry/cyberdream.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "C:\\Users\\Maily\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
@@ -213,6 +218,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Maily\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-airline-themes",
     url = "https://github.com/vim-airline/vim-airline-themes"
+  },
+  ["vim-css-color"] = {
+    loaded = true,
+    path = "C:\\Users\\Maily\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-css-color",
+    url = "https://github.com/ap/vim-css-color"
   },
   ["vim-devicons"] = {
     loaded = true,
