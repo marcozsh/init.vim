@@ -24,7 +24,6 @@ call plug#begin()
 Plug 'sainnhe/sonokai'
 Plug 'morhetz/gruvbox'
 Plug 'navarasu/onedark.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'daltonmenezes/aura-theme', { 'rtp': 'packages/neovim' }
 Plug 'Tsuzat/NeoSolarized.nvim', { 'branch': 'master' }
 Plug 'zootedb0t/citruszest.nvim'

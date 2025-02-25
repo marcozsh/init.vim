@@ -1,5 +1,10 @@
 
-# Install Neo Vim on Windows
+
+# This is a setup just for Windows
+
+
+> [!IMPORTANT]
+> Node is required for this setup.
 
 1. install scoop 
 
@@ -16,31 +21,17 @@ scoop install main/neovim
 
 ### Next, we do the configuration
 
-1. Install vim plug for plugins
-
-``` PowerShell
-iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
-    ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
-
-```
-
-2. Go to `C:\Users\YOURUSER\AppData\Local\nvim` , if not exist, create it
-3. Create `init.vim` (You can copy mine `https://github.com/marcozsh/init.vim.git`)
-4. Make the config
-5. Open vim and install the plugins `:PlugInstall`
-6. Then Update Coc `:CocUpdate`
-`Optionals`
-7. To install prettier with Coc `:CocInstall coc-prettier` if not work install with node `npm install -g prettier`
-8. To install tailwind lint with Coc `:CocInstall @yaegassy/coc-tailwindcss3`
-9. To install react/nextjs snippet with Coc `:CocInstall https://github.com/buidler-hub/react-nextjs-snippets@main`
-
-#### Note: For linters it needs Node
-
-If Coc fails in python files, install jedi-language-server with pip
-
-```PowerShell
-pip install jedi-language-server
-```
+1. Go to `C:\Users\YOURUSER\AppData\Local\nvim` , if not exist, create it
+2. Get the repository `git clone https://github.com/marcozsh/init.vim.git`
+3. To install prettier with node `npm install -g prettier`
+4. Install packer -> `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
+5. Go to `lua/marcozsh/packer.lua` and run `:PackerSync`
+## For python
+6. Instal pyright with `npm install -g pyright`
+## For tailwindcss
+7. Install tailwindcss with `npm install -g @tailwindcss/language-server`
+## For typescript, tsx, etc
+8. Install typescript-language-server with `npm install -g typescript typescript-language-server`
 
 #### For live server 
 
@@ -85,10 +76,5 @@ It needs gcc to work
 scoop install gcc
 ```
 Then :TSInstall language
-
-### for go to definition error
-```
-:CocInstall coc-json coc-tsserver
-```
 
 And there you go. Enjoy Nvim
