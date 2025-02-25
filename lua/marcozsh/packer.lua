@@ -72,6 +72,8 @@ return require('packer').startup(function(use)
 	use {'ap/vim-css-color'}
 	use { "scottmckendry/cyberdream.nvim"}
 
+	use {'mattn/emmet-vim'}
+	use {'windwp/nvim-ts-autotag'}
 
 
 end)
